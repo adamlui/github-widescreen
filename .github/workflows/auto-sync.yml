@@ -1,0 +1,71 @@
+name: Sync /greasemonkey/ to adamlui/userscripts/github/github-widescreen/
+
+on:
+  push:
+    branches: [ master, main ]
+    paths:
+      - '**'
+
+jobs:
+  build:
+    if: github.event.commits[0].committer.username != 'kudo-sync-bot'
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout adamlui/github-widescreen
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/github-widescreen
+          path: adamlui/github-widescreen
+          fetch-depth: 2
+
+      - name: Checkout adamlui/userscripts
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/userscripts
+          path: adamlui/userscripts
+
+      - name: Sync docs between root & /greasemonkey
+        run: |
+          shopt -s globstar
+          cd ${{ github.workspace }}/adamlui/github-widescreen
+          for file in docs/**/*.md; do
+            relative_path=${file#"docs/"}
+            root_doc="${{ github.workspace }}/adamlui/github-widescreen/docs/$relative_path"
+            gm_doc="${{ github.workspace }}/adamlui/github-widescreen/greasemonkey/docs/$relative_path"
+            root_modified=$(git log -1 --format="%ct" -- "$root_doc")
+            gm_modified=$(git log -1 --format="%ct" -- "$gm_doc")
+            if (( root_modified > gm_modified )); then
+              cp -f "$root_doc" "$gm_doc"
+            else
+              cp -f "$gm_doc" "$root_doc"
+            fi
+          done
+
+      - name: Sync /greasemonkey/ to adamlui/userscripts/github/github-widescreen/
+        run: |
+          rsync -avhr --delete \
+            ${{ github.workspace }}/adamlui/github-widescreen/greasemonkey/ \
+            ${{ github.workspace }}/adamlui/userscripts/github/github-widescreen/
+
+      - name: Push to adamlui/github-widescreen
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@kudoai.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/github-widescreen`]'
+          file_pattern: '**'
+          repository: adamlui/github-widescreen
+
+      - name: Push to adamlui/userscripts
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@kudoai.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/github-widescreen`]'
+          file_pattern: 'github/github-widescreen/**'
+          repository: adamlui/userscripts
