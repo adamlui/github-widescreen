@@ -24,18 +24,19 @@
 [![Follow @AdamLuiTube on YouTube](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=Follow%20%40adamluitube&style=social "YouTube")](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
 <a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&style=social" title="Mastodon">
 [![Follow @adamllui on X](https://img.shields.io/twitter/follow/adamllui?style=social "X")](https://x.com/adamllui)
+[![](https://img.shields.io/badge/Follow%20in%2fadamlui-397-blue?logo=linkedin&style=social "LinkedIn")](https://linkedin.com/in/adamlui)
 <br><br>
 
 ## 📜 Related scripts
 
-### <img width=17 style="margin: 0 1px -1px" src="https://github.githubassets.com/favicons/favicon.png"> [GitHub Star History ⭐](https://github.com/adamlui/github-star-history) <a href="https://github.com/awesome-scripts/awesome-userscripts#github"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
+### <img width=17 style="margin: 0 2px -1px" src="https://github.githubassets.com/favicons/favicon.png"> [GitHub Star History ⭐](https://github.com/adamlui/github-star-history) <a href="https://github.com/awesome-scripts/awesome-userscripts#github"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 Adds star history chart to sidebar of GitHub repos.<br>
 [Install](https://greasyfork.org/scripts/473377) /
 [Readme](https://github.com/adamlui/github-star-history#readme) /
 [Discuss](https://github.com/adamlui/github-star-history/discussions)
 
-### <img width=17 style="margin: 0 2px -1px" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://chatgptwidescreen.com/github) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 5px;" width="auto" height="24" />
+### <img width=17 style="margin: 0 3px -1px" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://chatgptwidescreen.com/github) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 5px;" width="auto" height="24" />
 
 Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling.
 <br>[Install](https://github.com/adamlui/chatgpt-widescreen#installation) / 
