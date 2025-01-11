@@ -6,7 +6,7 @@ on:
     paths: ["**", "!.*", "!package*.json", "!eslint.config*"]
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   build:
