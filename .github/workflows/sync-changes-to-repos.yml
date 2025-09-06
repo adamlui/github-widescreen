@@ -20,8 +20,6 @@ jobs:
       - name: Checkout adamlui/github-widescreen
         uses: actions/checkout@v5
         with:
-          token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/github-widescreen
           path: adamlui/github-widescreen
           fetch-depth: 2
 
