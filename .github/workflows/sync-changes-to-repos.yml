@@ -18,14 +18,14 @@ jobs:
     steps:
 
       - name: Checkout adamlui/github-widescreen
-        uses: actions/checkout@v5.0.1
+        uses: actions/checkout@v6.0.0
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
           path: adamlui/github-widescreen
           fetch-depth: 2
 
       - name: Checkout adamlui/userscripts
-        uses: actions/checkout@v5.0.1
+        uses: actions/checkout@v6.0.0
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
           repository: adamlui/userscripts
